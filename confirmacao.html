@@ -1,0 +1,88 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Miss Sport </title> 
+    <link rel="stylesheet" type="text/css" href="CSS/carrinho copy.css">
+    <link rel="icon" href="CSS/IMG/logo1.png">
+</head>
+<body>
+      <!--cabecalho!-->
+
+      <div class="header"> 
+        <a href="http://127.0.0.1:5500/PROJETO%201°%20SEMESTRE-%20Miss%20Sport/home.html#"> Home  </a>
+        <a href="http://127.0.0.1:5500/PROJETO%201°%20SEMESTRE-%20Miss%20Sport/sobre.html"> Sobre  </a>
+        <a href="http://127.0.0.1:5500/PROJETO%201°%20SEMESTRE-%20Miss%20Sport/contato.html"> Contato  </a>
+        <li class="dropdown"> 
+          <a href="javascript:void(0)" class="dropdown"> Catálogo </a>
+          <div class="dropdown-content"> 
+              <a href="http://127.0.0.1:5500/PROJETO%201°%20SEMESTRE-%20Miss%20Sport/calçados.html"> Calçados </a>
+              <a href="http://127.0.0.1:5500/PROJETO%201°%20SEMESTRE-%20Miss%20Sport/catálogo.html">  Roupas </a>
+              <a href="#">  Equipamentos </a>
+              <a href="http://127.0.0.1:5500/PROJETO%201°%20SEMESTRE-%20Miss%20Sport/acessórios.html">  Acessórios </a>
+              <a href="#">  Suplementos </a>
+          </div>
+      </ul>
+  </li>
+         <a href="http://127.0.0.1:5500/PROJETO%201°%20SEMESTRE-%20Miss%20Sport/home.html">  
+        <img id="logo" src="CSS/IMG/logo1.png">
+      </a>
+        <input class="search" type="search" placeholder="O que você procura? "> 
+        <img class="lupa" src="CSS/IMG/icons8-search-24.png"> 
+        <a href="http://127.0.0.1:5500/PROJETO%201°%20SEMESTRE-%20Miss%20Sport/outlet.html"> OUTLET  </a>
+        <a href="http://127.0.0.1:5500/PROJETO%201°%20SEMESTRE-%20Miss%20Sport/carrinho.html"> <img class="carrinho"src="CSS/IMG/icons8-line-96.png"> </a>
+        </div>
+
+        <div class="tit">Tire uma foto e envie! </div>
+        <div class="camera-container">
+            <video id="videoElement" autoplay></video>
+            <div class="oval-mirror"></div>
+            <div class="button-container">
+                <button class="camera-button" onclick="startCam()"> Tirar foto</button>
+                <button class="camera-button" onclick="stopCam()">Fechar Câmera</button>
+            </div>
+        </div>
+
+            <script> 
+    
+                let videoStream;
+            
+                async function startCam(){
+                    const videoElement = document.getElementById('videoElement');
+                    try{
+                        videoStream = await navigator.mediaDevices.getUserMedia({video : true });
+                        videoElement.srcObject = videoStream;
+                    } catch(error){
+                        console.error('Erro ao abrir a camera!');
+                    }
+                }
+            
+                async function stopCam(){
+                    const videoElement = document.getElementById('videoElement');
+                    if(videoStream){
+                        const tracks = videoStream.getTracks();
+                        tracks.forEach(track => track.stop());
+                            videoElement.srcObject = null;
+                        }
+                    }
+                
+                </script>
+        </div>
+        <br> <br> 
+        <br> <br> 
+      
+ 
+<div class="rodape"> 
+  <div class="vitrine2"> 
+       <img class="icons" src="CSS/IMG/delivery-truck.png"> 
+           <div class="txt3"> Frete Grátis !  </div>
+      <img class="icons" src="CSS/IMG/clock.png">
+          <div class="txt3"> Entrega Expressa !  </div>
+      <img class="icons" src="CSS/IMG/credit.png">
+          <div class="txt3"> Em até 10x no cartão de crédito <br> Sem juros!</div>
+      </div>
+</body>
+</html>
+  
